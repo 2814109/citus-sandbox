@@ -59,3 +59,11 @@ CREATE TABLE ads (
 ```
 \dt
 ```
+
+## Add Index for table
+
+```bash
+ALTER TABLE companies ADD PRIMARY KEY (id);
+ALTER TABLE campaigns ADD PRIMARY KEY (id, company_id);
+ALTER TABLE ads ADD PRIMARY KEY (id, company_id);
+```
