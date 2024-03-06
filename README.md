@@ -67,3 +67,25 @@ ALTER TABLE companies ADD PRIMARY KEY (id);
 ALTER TABLE campaigns ADD PRIMARY KEY (id, company_id);
 ALTER TABLE ads ADD PRIMARY KEY (id, company_id);
 ```
+
+## copy csv file
+
+- root dir
+
+```bash
+docker cp companies.csv citus:.
+docker cp campaigns.csv citus:.
+docker cp ads.csv citus:.
+```
+
+## insert
+
+```bash
+psql -U postgres
+
+\copy companies from 'companies.csv' with csv
+
+\copy campaigns from 'campaigns.csv' with csv
+
+\copy ads from 'ads.csv' with csv
+```
