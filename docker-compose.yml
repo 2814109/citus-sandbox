@@ -1,0 +1,9 @@
+version: '3'
+services:
+  citus:
+    image: citusdata/citus:12.1
+    container_name: citus
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: mypass
